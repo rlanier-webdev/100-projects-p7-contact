@@ -1,6 +1,10 @@
 require('dotenv').config();
 
 var Airtable = require('airtable');
+Airtable.configure({
+    endpointUrl: 'https://api.airtable.com',
+    apiKey: process.env.AIRTABLE_API_KEY
+});
 var base = new Airtable({apiKey: process.env.AIRTABLE_API_KEY }).base(process.env.AIRTABLE_BASE_ID);
 
 const table = base(process.env.AIRTABLE_TABLE_NAME);
@@ -29,6 +33,15 @@ form.addEventListener("submit", function(event){
         "email": email,
         "website": url,
         "message": message
-    });
+    }, function(err, records) {
+        if (err) { 
+            console.error(err); 
+            return; 
+        }
+    })
+
+    setTimeout(function(){
+        window.location.href = '/thankyou.html';
+     }, 5000);
 });
 

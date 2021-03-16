@@ -175,7 +175,7 @@ header .social__links i:hover {
 .content__container {
   margin-top: -115px;
 }
-form {
+form, .thank__you {
   width: 685px;
   margin: 0 auto;
   padding: 50px;
@@ -250,6 +250,26 @@ form button:hover {
   border: 1px solid rgba(151,35,109,1);
 }
 
+.thank__you {
+  height: 250px;
+  justify-content: center;
+  flex-direction: column;
+}
+.thank__you {
+  flex-wrap: nowrap;
+}
+.thank__you h3 {
+  font-size: 1.8rem;
+  padding: 10px;
+}
+.thank__you p {
+  font-size: 1.4rem;
+}
+.thank__you i {
+  font-size: 3.8rem;
+  color: green;
+  padding: 10px;
+}
 /* Media Queries */
 @media (max-width: 800px) {
   header {
@@ -293,12 +313,16 @@ form button:hover {
   .content__container {
     margin: 50px;
   }
-  form {
+  form, .thank__you {
     width: 75%;
   }
   form input, form textarea {
     flex: 100%;
     min-width: 75%;
+  }
+  .thank__you {
+    display: block;
+    text-align: center;
   }
 }
 
